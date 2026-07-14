@@ -18,7 +18,6 @@ model Todo {
     @@map("todos")
 }
 
-
 // Reference only — FK relation example, not in scope for this app
 // model User {
 //   id        Int    @id @default(autoincrement())
