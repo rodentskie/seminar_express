@@ -13,7 +13,7 @@ model Todo {
     completed   Boolean  @default(false)
     createdAt   DateTime @default(now()) @map("created_at")
     updatedAt   DateTime @updatedAt @map("updated_at")
-    deletedAt   DateTime @updatedAt @map("deleted_at")
+    deletedAt   DateTime? @map("deleted_at")
 
     @@map("todos")
 }
