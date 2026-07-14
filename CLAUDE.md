@@ -16,6 +16,7 @@ Basic Todo REST API. Single-user, single-entity — no auth/multi-user scope for
 - [src/handler/](src/handler/) — request handlers (functions that handle the request and response), scaffolded, currently empty
 - [src/middleware/](src/middleware/) — middleware, scaffolded, currently empty
 - [src/routes/](src/routes/) — API routes, scaffolded, currently empty
+- [src/models/](src/models/) — Zod schemas for request/response validation, currently empty
 
 ## Data model
 
