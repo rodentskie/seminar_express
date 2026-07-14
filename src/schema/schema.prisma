@@ -16,3 +16,18 @@ model Todo {
 
   @@map("todos")
 }
+
+// Reference only — FK relation example, not in scope for this app (see CLAUDE.md non-goals).
+// model User {
+//   id        Int    @id @default(autoincrement())
+//   firstName String @map("first_name")
+//   lastName  String @map("last_name")
+//   gender    String
+//   todos     Todo[]
+//
+//   @@map("users")
+// }
+//
+// Todo would then need:
+//   userId Int  @map("user_id")
+//   user   User @relation(fields: [userId], references: [id])
