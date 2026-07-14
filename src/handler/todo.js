@@ -20,3 +20,13 @@ export async function createTodo(req, res) {
 
   res.status(201).json(todo);
 }
+
+export async function getTodos(req, res) {
+  const { title } = req.query;
+
+  const todos = await prisma.todo.findMany({
+    where: title ? { title: { contains: title, mode: "insensitive" } } : undefined,
+  });
+
+  res.json(todos);
+}
