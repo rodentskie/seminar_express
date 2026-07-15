@@ -13,7 +13,9 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 const API_PREFIX = process.env.API_PREFIX || "/api";
 
-app.get('/', (req, res) => res.json({ message: "hello world" }))
+app.get(`${API_PREFIX}/greeting`, (req, res) => res.json({ message: "hello world" }))
+
+app.get("/ping", (req, res) => res.json({ message: "pong" }))
 
 app.use(API_PREFIX, todoRoutes);
 
