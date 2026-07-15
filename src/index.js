@@ -2,8 +2,10 @@ import "dotenv/config";
 
 import express from "express";
 import cors from "cors";
+import swaggerUi from "swagger-ui-express";
 
 import todoRoutes from "./routes/todo.js";
+import { swaggerSpec } from "./docs/swagger.js";
 
 const app = express();
 
@@ -16,6 +18,8 @@ const API_PREFIX = process.env.API_PREFIX || "/api";
 app.get(`${API_PREFIX}/greeting`, (req, res) => res.json({ message: "hello world" }))
 
 app.get("/ping", (req, res) => res.json({ message: "pong" }))
+
+app.use(`${API_PREFIX}/swagger`, swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(API_PREFIX, todoRoutes);
 
