@@ -11,10 +11,11 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
+const API_PREFIX = process.env.API_PREFIX || "/api";
 
 app.get('/', (req, res) => res.json({ message: "hello world" }))
 
-app.use(todoRoutes);
+app.use(API_PREFIX, todoRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

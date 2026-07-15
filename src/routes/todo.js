@@ -3,9 +3,9 @@ import { createTodo, getTodos, updateTodo, deleteTodo } from "../handler/todo.js
 
 const router = Router();
 
-router.get("/todo", getTodos);
-router.post("/todo", createTodo);
-router.patch("/todo/:id", updateTodo);
-router.delete("/todo/:id", deleteTodo);
+router.get("/todos", getTodos);
+router.post("/todos", createTodo);
+router.patch("/todos/:id", updateTodo);
+router.delete("/todos/:id", deleteTodo);
 
 export default router;
